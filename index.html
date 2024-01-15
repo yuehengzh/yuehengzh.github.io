@@ -20,7 +20,7 @@
   <h1>Yueheng Zhang</h1>
 
   
-  <position style="font-size:1.10rem;">Research Intern</position>
+  <position style="font-size:1.10rem;">Machine Learning Associate</position>
   <br>
   
   
@@ -57,74 +57,7 @@
 
     <h2 id="about-me">About Me</h2>
 
-<p>I am a research intern at Vector Institue, supervised by <a href="https://cs.uwaterloo.ca/~ppoupart/">Prof. Pascal Poupart</a>. I received my Master’s degree from University of Waterloo, where I ventured into machine learning research. Before that, I graduated from the University of Chicago, majoring in computer science and mathematics.</p>
-
-<h2>Current Projects</h2>
-
-<div>
-<ol class="projects">
-
-
-
-<li>
-<div class="project">
-    <div>
-        <h3>
-            Graph Gaussian Process with linearly constrained kernels learned from data
-        </h3>
-        <div class="author">Collaboration with <a href="https://avt.im/">Alexander Terenin</a>, Haolin Yu, <a href="https://cs.uwaterloo.ca/~ppoupart/">Pascal Poupart</a></div>
-    </div>
-
-    Let us consider the task of predicting real-valued function on nodes of a graph given samples of this function on certain nodes. For example, the graph can be a road network, and we would like to predict traffic speed at any point in the network when given speed sensor data at certain locations. In this project, we want to make this prediction more accurate and data-efficient by using Gaussian process regression with a kernel that encodes prior information about the structure of the function. In particular, we are concerned with the setting where the function satisfies some linear structure. In a previous work, we have shown that by using manually crafted prior information, this approach indeed leads to superior performance. Currently, we are working on learning this prior information directly from data.
-
-    
-</div>
-</li>
-
-<br />
-
-
-
-<li>
-<div class="project">
-    <div>
-        <h3>
-            Denoising time-series gene regulatory networks
-        </h3>
-        <div class="author">Collaboration with <a href="https://homes.cs.washington.edu/~swang/">Sheng Wang</a>, <a href="https://bme.gatech.edu/bme/faculty/Saurabh-Sinha">Saurabh Sinha</a></div>
-    </div>
-
-    Gene regulatory networks (GRNs) describe how gene expressions are regulated, the study of which is crucial to understanding a wide range of biological processes. GRNs can be reconstructed from transcriptomics and chromatin accessibility data via mathematical modelings or machine learning models. Most existing methods reconstruct GRNs at a single time point. However, for time-series data (e.g. in developmental biology) it is important to take into account the temporal correlation between time points. We are applying generative deep learning models, in particular conditional variational autoencoder and transformer architecture, to produce holistically denoised GRNs for time series data. Preliminary results show that generative models strongly outperform the best baseline (plots coming soon!).
-
-    
-</div>
-</li>
-
-<br />
-
-
-
-<li>
-<div class="project">
-    <div>
-        <h3>
-            Foundation models for practical bandit problems
-        </h3>
-        <div class="author">Group project</div>
-    </div>
-
-    We are developing a foundaton model for contextual bandits, with an encoder that maps inputs from different domains into a common reference space.
-
-    
-</div>
-</li>
-
-<br />
-
-
-
-</ol>
-</div>
+<p>I am currently a Machine Learning Associate at Vector Institue. Before that, I was a research intern at Vector Institue, supervised by <a href="https://cs.uwaterloo.ca/~ppoupart/">Prof. Pascal Poupart</a>. I received my Master’s degree from University of Waterloo, where I ventured into machine learning research. Before that, I graduated from the University of Chicago, majoring in computer science and mathematics.</p>
 
 <h2>Publications</h2>
 
@@ -143,7 +76,7 @@
             
         </div>
         <div class="author">Yueheng Zhang, 2023.</div>
-        <div class="periodical"><em>Master's Thesis</em>
+        <div class="periodical"><em>Master's Thesis, University of Waterloo.</em>
     </div>
     <div class="links">
         
@@ -163,13 +96,13 @@
 <div>
     <div>
         <div class="title">
-            <a href="https://arxiv.org/abs/2107.14421">On the principal eigenvector of a graph</a> 
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0024379523004779">On the stability of the principal ratio</a> 
              
             <a href="https://arxiv.org/pdf/2107.14421.pdf" class="pdf">PDF</a>
             
         </div>
-        <div class="author">Yueheng Zhang, 2021.</div>
-        <div class="periodical"><em>Under review</em>
+        <div class="author">Yueheng Zhang.</div>
+        <div class="periodical"><em>Linear Algebra and its Applications, Volume 685, 2024.</em>
     </div>
     <div class="links">
         
@@ -178,6 +111,50 @@
         
     </div>
   </div>
+</div>
+</li>
+
+<br />
+
+
+
+</ol>
+</div>
+
+<h2>Current Projects</h2>
+
+<div>
+<ol class="projects">
+
+
+
+<li>
+<div class="project">
+    <div>
+        <h3>
+            Discrete-state Bayesian RL with graph Gaussian processes
+        </h3>
+        <div class="author">Collaboration with <a href="https://avt.im/">Alexander Terenin</a>, Haolin Yu, <a href="https://cs.uwaterloo.ca/~ppoupart/">Pascal Poupart</a></div>
+    </div>
+
+    Gaussian processes (GPs) are a versatile technique for quantifying uncertainty about unknown functions, and they have long been applied to reinforcement learning (RL) problems. Most existing RL algorithms with GPs treat the value function as a generic unknown function to approximate using GPs with generic kernels. We observe that under certain modelings, the value function has a natural custom kernel. We conjecture that using this kernel for value estimation is more accurate and data-efficient. Preliminary results for offline RL in maze environments show that our method has significantly better performance than baselines. We are currently exploring solving mazes in the online setting. <br /> <div class="images"> <div class="image"> <img src="assets/img/rlvis.png" /> </div> <div class="caption"> A visualization of the maze environment for offline RL. The black dots are cells visited by five given trajectories starting from the upper-left corner, the blue dots are cells visited by a variant of CQL, the green dots are cells visited by a GP model using the Matérn kernel, and the red dots are cells visited by our model. Starting from the upper-right corner, our model successfully reaches the goal state (lower-right corner) in 80 steps with a reward of 0.99 (for reference, the average length of the five given trajectories starting from the upper-left corner is 63 steps, and the average reward is 0.99), whereas both CQL and the method with Matérn kernel failed to reach the goal state starting from the upper-right corner. </div> </div>
+</div>
+</li>
+
+<br />
+
+
+
+<li>
+<div class="project">
+    <div>
+        <h3>
+            Denoising time-series gene regulatory networks
+        </h3>
+        <div class="author">Collaboration with <a href="https://homes.cs.washington.edu/~swang/">Sheng Wang</a>, <a href="https://bme.gatech.edu/bme/faculty/Saurabh-Sinha">Saurabh Sinha</a></div>
+    </div>
+
+    Gene regulatory networks (GRNs) describe how gene expressions are regulated, the study of which is crucial to understanding a wide range of biological processes. GRNs can be reconstructed from transcriptomics and chromatin accessibility data via mathematical modelings or machine learning models. Most existing methods reconstruct GRNs at a single time point. However, for time-series data (e.g. in developmental biology) it is important to take into account the temporal correlation between time points. We are applying generative deep learning models, in particular conditional variational autoencoder and transformer architecture, to produce holistically denoised GRNs for time series data. Preliminary results show that generative models strongly outperform the best baseline. <div class="images"> <div class="image" style="max-width:40%;"> <img src="assets/img/grn_roc.png" /> </div> <div class="caption" style="width:5%"> </div> <div class="image" style="max-width:40%;"> <img src="assets/img/grn_prc.png" /> </div> </div> <div class="images"> <div class="caption"> ROC and PRC for denoising of 10 timepoints of an evolving synthetic GRN with 250 transcription factors and 1000 genes, featuring our method (cVAE) and the baselines. </div> </div>
 </div>
 </li>
 

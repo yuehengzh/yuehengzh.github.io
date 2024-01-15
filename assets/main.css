@@ -173,21 +173,31 @@ section {
   padding-bottom: 0.1rem;
 }
 
+.projects li h3 {
+  margin-bottom: 4pt;
+}
+
 .projects li .author {
   font-style: italic;
+  margin-bottom: 6pt;
 }
 
-.projects li .picture {
+.images {
+  padding-top: 10px;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.projects li .picture img {
-  width: 30%;
+.images .image img {
   float: left;
+  max-width: 100%;
 }
 
-.projects li .picture .description {
-  padding-left: 20px;
+.images .caption {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 11px;
   float: left;
 }
 
